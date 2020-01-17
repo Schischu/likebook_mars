@@ -33,6 +33,7 @@ adb reboot-bootloader
     CMDLINE: console=ttyS2 androidboot.baseband=N/A androidboot.selinux=permissive androidboot.hardware=rk30board androidboot.console=ttyS2 init=/init mtdparts=rk29xxnand:0x00002000@0x00002000(uboot),0x00002000@0x00004000(trust),0x00002000@0x00006000(wbf),0x00002000@0x00008000(misc),0x00008000@0x0000a000(resource),0x0000a000@0x00012000(kernel),0x00010000@0x0001c000(boot),0x00010000@0x0002c000(recovery),0x00038000@0x0003c000(backup),0x00040000@0x00074000(cache),0x00002000@0x000B4000(kpanic),0x00300000@0x000B6000(system),0x00008000@0x003B6000(metadata),0x00002000@0x003BE000(baseparamer),0x00020000@0x003C0000(radical_update),-@0x003E0000(userdata)
 
 mtdparts show available partitions
+
     ./rkflashtool r uboot > uboot.img
     ./rkflashtool r trust > trust.img
     ./rkflashtool r wbf > wbf.img
@@ -50,6 +51,7 @@ mtdparts show available partitions
     ./rkflashtool r radical_update > radical_update.img
     ./rkflashtool r userdata > userdata.img
 or
+
     rkflashtool r 0x00002000 0x00002000 > uboot.img
     rkflashtool r 0x00004000 0x00002000 > trust.img
     rkflashtool r 0x00006000 0x00002000 > wbf.img
